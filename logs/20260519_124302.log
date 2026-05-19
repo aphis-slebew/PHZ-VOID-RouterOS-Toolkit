@@ -1,0 +1,4 @@
+2026-05-19 12:43:02,160 - DEBUG - Connected to 192.168.68.1:80 (SSL: False)
+2026-05-19 12:43:12,164 - ERROR - Command error: timed out
+2026-05-19 12:43:22,172 - ERROR - Command error: timed out
+2026-05-19 12:43:43,689 - ERROR - Connection failed: [WinError 10061] No connection could be made because the target machine actively refused it

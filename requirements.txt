@@ -1,0 +1,23 @@
+# PHZ//VOID - Python Dependencies
+# Install dengan: pip install -r requirements.txt
+
+# Core dependencies
+requests>=2.28.0
+pyyaml>=6.0
+colorama>=0.4.6
+cryptography>=39.0.0
+
+# Network & Socket
+pysocks>=1.7.1
+
+# Progress bar & display
+tqdm>=4.65.0
+
+# JSON & Data processing
+jsonschema>=4.17.0
+
+# Optional: Untuk NSE integration
+# python-nmap>=0.7.1
+
+# Optional: Untuk SSL bypass
+# urllib3>=2.0.0

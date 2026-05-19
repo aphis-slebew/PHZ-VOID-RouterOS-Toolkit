@@ -1,0 +1,151 @@
+# ============================================================
+# PHZ//VOID - Configuration File
+# ============================================================
+# Tools untuk security testing MikroTik RouterOS
+# Gunakan hanya untuk authorized testing
+# ============================================================
+
+# ==================== TARGET SETTINGS ====================
+target:
+  # Target IP address (diisi saat runtime atau di sini)
+  ip: null
+  
+  # Port yang akan discan/diserang
+  ports:
+    api: 8728
+    api_ssl: 8729
+    rest: 443
+    winbox: 8291
+    ssh: 22
+    telnet: 23
+    ftp: 21
+    www: 80
+    www_ssl: 443
+  
+  # Timeout koneksi dalam detik
+  timeout: 10
+  
+  # Gunakan SSL/TLS
+  ssl: false
+  
+  # Verify SSL certificate (false = ignore)
+  verify_ssl: false
+
+# ==================== ATTACK SETTINGS ====================
+attack:
+  # Jumlah thread concurrent
+  threads: 10
+  
+  # Delay antar request (detik)
+  delay: 0.5
+  
+  # Mode delay: high, balanced, stealth, custom
+  delay_mode: "balanced"
+  
+  # Max retries untuk request gagal
+  max_retries: 3
+  
+  # Stealth mode (acak delay, user-agent, dll)
+  stealth: false
+  
+  # Fingerprint target sebelum attack
+  fingerprint: true
+
+# ==================== CREDENTIAL SETTINGS ====================
+credentials:
+  # Default username untuk MikroTik
+  default_usernames:
+    - "admin"
+    - "root"
+    - "user"
+    - "support"
+    - "tech"
+    - "manager"
+  
+  # Default password untuk MikroTik
+  default_passwords:
+    - ""
+    - "admin"
+    - "123456"
+    - "password"
+    - "admin123"
+    - "mikrotik"
+    - "routeros"
+    - "MikroTik"
+    - "12345678"
+    - "qwerty"
+  
+  # Path ke wordlist file
+  wordlist_users: "wordlists/users.txt"
+  wordlist_passwords: "wordlists/passwords.txt"
+  wordlist_combos: "wordlists/combos.txt"
+
+# ==================== EXPLOIT SETTINGS ====================
+exploit:
+  # Database CVE path
+  cve_database: "wordlists/mikrotik_cves.json"
+  
+  # Auto-scan CVEs sebelum exploit
+  auto_scan: true
+  
+  # Timeout exploit execution
+  timeout: 30
+  
+  # Try all exploits or stop after first success
+  try_all: false
+
+# ==================== POST EXPLOIT SETTINGS ====================
+post_exploit:
+  # Backup config setelah login
+  backup_config: true
+  
+  # Extract sensitive data
+  extract_secrets: true
+  
+  # Save session untuk resume
+  save_session: true
+  
+  # Session directory
+  session_dir: "sessions/"
+
+# ==================== REPORTING SETTINGS ====================
+reporting:
+  # Format: json, csv, html, txt
+  format: "json"
+  
+  # Output directory
+  output_dir: "reports/"
+  
+  # Save attack logs
+  save_logs: true
+  
+  # Log directory
+  log_dir: "logs/"
+  
+  # Log level: DEBUG, INFO, WARNING, ERROR
+  log_level: "INFO"
+
+# ==================== NETWORK SETTINGS ====================
+network:
+  # Source IP spoofing (advanced)
+  source_ip: null
+  
+  # Proxy support
+  proxy: null
+  
+  # User-Agent untuk HTTP requests
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+
+# ==================== DISPLAY SETTINGS ====================
+display:
+  # Show banner
+  show_banner: true
+  
+  # Show progress bar
+  progress_bar: true
+  
+  # Color output
+  color: true
+  
+  # Verbose level: 0, 1, 2
+  verbose: 1
